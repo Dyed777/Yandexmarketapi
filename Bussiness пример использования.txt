@@ -1,0 +1,67 @@
+# Инициализация объекта API
+api = BusinessesAPI()
+
+# Пример вызова метода get_business_settings
+a = api.get_business_settings("12345")
+print_response(a, "Настройки бизнеса")
+
+# Пример вызова метода get_business_offer_mappings
+a = api.get_business_offer_mappings("12345")
+print_response(a, "Соответствия предложений бизнеса")
+
+# Пример вызова метода get_business_quarantine_offers
+a = api.get_business_quarantine_offers("12345", req_params={"limit": 10}, req_data={"filter": "quarantine"})
+print_response(a, "Предложения бизнеса в карантине")
+
+# Пример вызова метода get_business_goods_feedback
+a = api.get_business_goods_feedback("12345")
+print_response(a, "Отзывы о товарах бизнеса")
+
+# Пример вызова метода get_business_quality_rating
+a = api.get_business_quality_rating("12345", camp_ids=["101", "102", "103"])
+print_response(a, "Рейтинг качества бизнеса")
+
+# Пример вызова метода get_bids_info
+a = api.get_bids_info(12345, skus=["SKU123", "SKU456"], limit=20, page_token="abc123")
+print_response(a, "Информация о ставках")
+
+# Пример вызова метода get_bids_recommendations
+a = api.get_bids_recommendations(12345, skus=["SKU123", "SKU456"])
+print_response(a, "Рекомендации по ставкам")
+
+# Пример вызова метода put_bids_for_business
+a = api.put_bids_for_business(12345, bids=[{"sku": "SKU123", "bid": 500}, {"sku": "SKU456", "bid": 700}])
+print_response(a, "Установка ставок для бизнеса")
+
+# Пример вызова метода add_offers_to_archive
+a = api.add_offers_to_archive(12345, offer_ids=["OFFER123", "OFFER456"])
+print_response(a, "Добавление предложений в архив")
+
+# Пример вызова метода delete_offers_from_archive
+a = api.delete_offers_from_archive(12345, offer_ids=["OFFER123", "OFFER456"])
+print_response(a, "Удаление предложений из архива")
+
+# Пример вызова метода delete_offers
+a = api.delete_offers(12345, offer_ids=["OFFER123", "OFFER456"])
+print_response(a, "Удаление предложений")
+
+# Пример вызова метода update_business_prices
+a = api.update_business_prices(12345, offers=[
+    {
+        "offerId": "SKU123",
+        "price": {
+            "value": 1000,
+            "currencyId": "RUR",
+            "discountBase": 1200
+        }
+    },
+    {
+        "offerId": "SKU456",
+        "price": {
+            "value": 2000,
+            "currencyId": "RUR",
+            "discountBase": 2500
+        }
+    }
+])
+print_response(a, "Обновление цен на товары бизнеса")

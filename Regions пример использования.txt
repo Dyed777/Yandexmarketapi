@@ -1,0 +1,14 @@
+# Инициализация объекта API
+api = RegionsAPI()
+
+# Пример вызова метода get_region_by_name
+a = api.get_region_by_name("Москва")
+print_response(a, "Информация о регионах с названием 'Москва'")
+
+# Пример вызова метода get_region
+a = api.get_region(12345)
+print_response(a, "Информация о регионе с ID 12345")
+
+# Пример вызова метода get_region_children
+a = api.get_region_children(12345)
+print_response(a, "Подрегионы для региона с ID 12345")

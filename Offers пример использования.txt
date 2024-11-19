@@ -1,0 +1,61 @@
+# Инициализация объекта API
+api = OffersAPI()
+
+# Пример вызова метода get_prices_by_offer_ids
+a = api.get_prices_by_offer_ids("12345", offer_ids=["SKU123", "SKU456"])
+print_response(a, "Цены для товаров по идентификаторам")
+
+# Пример вызова метода get_offer_cards_content_status
+a = api.get_offer_cards_content_status("12345", req_data={"offerIds": ["SKU123", "SKU456"]})
+print_response(a, "Статус контента карточек предложений")
+
+# Пример вызова метода get_suggested_offer_mappings
+a = api.get_suggested_offer_mappings("12345", offers=[{"offerId": "SKU123"}, {"offerId": "SKU456"}])
+print_response(a, "Предложенные карточки для товаров бизнеса")
+
+# Пример вызова метода get_models_info
+a = api.get_models_info(model_ids=[101, 102, 103], region_id=213, currency="RUR")
+print_response(a, "Информация о моделях товаров")
+
+# Пример вызова метода get_model_info
+a = api.get_model_info(model_id=101, region_id=213, currency="RUR")
+print_response(a, "Информация о модели товара")
+
+# Пример вызова метода get_model_offers
+a = api.get_model_offers(model_id=101, region_id=213, count=5, currency="RUR", order_by_price="ASC", page=1)
+print_response(a, "Предложения для модели товара")
+
+# Пример вызова метода search_models
+a = api.search_models(query="ноутбук", region_id=213, currency="RUR", page=1, page_size=10)
+print_response(a, "Результаты поиска моделей товаров")
+
+# Пример вызова метода update_offer_mappings
+a = api.update_offer_mappings(
+    business_id=12345,
+    offer_mappings=[
+        {"offerId": "SKU123", "price": {"value": 1000, "currency": "RUR"}},
+        {"offerId": "SKU456", "price": {"value": 2000, "currency": "RUR"}}
+    ],
+    only_partner_media_content=True
+)
+print_response(a, "Обновление информации о товарах в каталоге")
+
+# Пример вызова метода add_hidden_offers
+a = api.add_hidden_offers(campaign_id=54321, offer_ids=["SKU123", "SKU456"])
+print_response(a, "Скрытие товаров в магазине")
+
+# Пример вызова метода delete_hidden_offers
+a = api.delete_hidden_offers(campaign_id=54321, offer_ids=["SKU123", "SKU456"])
+print_response(a, "Возобновление показа скрытых товаров")
+
+# Пример вызова метода calculate_tariffs
+a = api.calculate_tariffs(
+    offers=[
+        {"offerId": "SKU123", "price": 1000},
+        {"offerId": "SKU456", "price": 2000}
+    ],
+    campaign_id=54321,
+    selling_program="FBY",
+    frequency="MONTHLY"
+)
+print_response(a, "Рассчитанные тарифы для товаров")

@@ -1,0 +1,37 @@
+# Инициализация объекта API
+api = CategoriesAPI()
+
+# Пример вызова метода get_categories_tree
+a = api.get_categories_tree(language="EN")
+print_response(a, "Дерево категорий на языке 'EN'")
+
+# Пример вызова метода get_categories_max_sale_quantum
+a = api.get_categories_max_sale_quantum(category_ids=[123, 456, 789])
+print_response(a, "Максимальные лимиты продажи для категорий")
+
+# Пример вызова метода get_category_content_parameters
+a = api.get_category_content_parameters(category_id=12345)
+print_response(a, "Характеристики категории с ID 12345")
+
+# Пример вызова метода update_offer_content
+a = api.update_offer_content(
+    business_id=12345,
+    offers_content=[
+        {
+            "offerId": "SKU123",
+            "categoryId": 123,
+            "parameters": [
+                {"id": 456, "value": "Value1"},
+                {"id": 789, "value": "Value2"}
+            ]
+        },
+        {
+            "offerId": "SKU456",
+            "categoryId": 456,
+            "parameters": [
+                {"id": 111, "value": "AnotherValue"}
+            ]
+        }
+    ]
+)
+print_response(a, "Обновление характеристик товаров")

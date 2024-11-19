@@ -1,0 +1,43 @@
+# Инициализация объекта API
+api = PromosAPI()
+
+# Пример вызова метода get_promos
+a = api.get_promos("12345", req_data={"filter": "active"})
+print_response(a, "Список акций для бизнеса")
+
+# Пример вызова метода get_promo_offers
+a = api.get_promo_offers(
+    business_id=12345,
+    promo_id="PROMO123",
+    status_type="APPROVED",
+    limit=10,
+    page_token="abc123"
+)
+print_response(a, "Список товаров, участвующих в акции")
+
+# Пример вызова метода update_promo_offers
+a = api.update_promo_offers(
+    business_id=12345,
+    promo_id="PROMO123",
+    offers=[
+        {"offerId": "SKU123", "price": {"value": 900, "currency": "RUR"}},
+        {"offerId": "SKU456", "price": {"value": 1500, "currency": "RUR"}}
+    ]
+)
+print_response(a, "Добавление товаров в акцию или обновление их цен")
+
+# Пример вызова метода delete_promo_offers (удаление конкретных товаров из акции)
+a = api.delete_promo_offers(
+    business_id=12345,
+    promo_id="PROMO123",
+    offer_ids=["SKU123", "SKU456"]
+)
+print_response(a, "Удаление конкретных товаров из акции")
+
+# Пример вызова метода delete_promo_offers (удаление всех товаров из акции)
+a = api.delete_promo_offers(
+    business_id=12345,
+    promo_id="PROMO123",
+    delete_all_offers=True
+)
+print_response(a, "Удаление всех товаров из акции")

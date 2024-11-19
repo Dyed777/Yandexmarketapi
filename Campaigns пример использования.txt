@@ -1,0 +1,61 @@
+# Инициализация объекта API
+api = CampaignsAPI()
+
+# Пример вызова метода get_campaigns
+a = api.get_campaigns()
+print_response(a, "Список кампаний")
+
+# Пример вызова метода get_campaign
+a = api.get_campaign(12345)
+print_response(a, "Данные кампании")
+
+# Пример вызова метода get_campaign_settings
+a = api.get_campaign_settings(12345)
+print_response(a, "Настройки кампании")
+
+# Пример вызова метода get_campaigns_orders
+a = api.get_campaigns_orders(12345, limit=10, page_token="abc123")
+print_response(a, "Список заказов кампании")
+
+# Пример вызова метода get_campaign_order
+a = api.get_campaign_order(12345, 67890)
+print_response(a, "Данные конкретного заказа")
+
+# Пример вызова метода get_campaigns_hidden_offers
+a = api.get_campaigns_hidden_offers(12345)
+print_response(a, "Скрытые предложения кампании")
+
+# Пример вызова метода get_campaign_offers
+a = api.get_campaign_offers(12345, req_params={"status": "active"})
+print_response(a, "Предложения кампании")
+
+# Пример вызова метода get_campaign_quarantine_offers
+a = api.get_campaign_quarantine_offers(12345, req_params={"limit": 5})
+print_response(a, "Товары кампании в карантине")
+
+# Пример вызова метода update_campaign_offers
+a = api.update_campaign_offers(12345, offers=[
+    {
+        "offerId": "SKU123",
+        "price": {
+            "value": 1000,
+            "currencyId": "RUR",
+            "discountBase": 1200
+        },
+        "stockCount": 10
+    },
+    {
+        "offerId": "SKU456",
+        "price": {
+            "value": 2000,
+            "currencyId": "RUR",
+            "discountBase": 2500
+        },
+        "stockCount": 5
+    }
+])
+print_response(a, "Обновление условий продажи товаров")
+
+# Пример вызова метода delete_campaign_offers
+a = api.delete_campaign_offers(12345, offer_ids=["SKU123", "SKU456"])
+print_response(a, "Удаление товаров из ассортимента кампании")

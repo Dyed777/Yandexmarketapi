@@ -1,0 +1,62 @@
+# Инициализация объекта API
+api = ReportsAPI()
+
+# Пример вызова метода generate_report
+a = api.generate_report("reports/some-endpoint", params={"key": "value"}, data={"field": "data"}, report_format="CSV")
+print_response(a, "Генерация отчета")
+
+# Пример вызова метода get_goods_feedback_comments
+a = api.get_goods_feedback_comments("12345", feedback_id=67890, page_token="abc123")
+print_response(a, "Комментарии к отзыву о товаре")
+
+# Пример вызова метода generate_shows_sales_report
+a = api.generate_shows_sales_report("2024-01-01", "2024-01-31", grouping="CATEGORIES", business_id=12345, report_format="CSV")
+print_response(a, "Отчет «Аналитика продаж»")
+
+# Пример вызова метода generate_boost_consolidated_report
+a = api.generate_boost_consolidated_report(12345, "2024-01-01", "2024-01-31", report_format="FILE")
+print_response(a, "Сводный отчет по бусту продаж")
+
+# Пример вызова метода generate_goods_movement_report
+a = api.generate_goods_movement_report(54321, "2024-01-01", "2024-01-31", shop_sku="SKU123")
+print_response(a, "Отчет по движению товаров")
+
+# Пример вызова метода generate_united_orders_report
+a = api.generate_united_orders_report(12345, "2024-01-01", "2024-01-31", campaign_ids=[54321, 98765], promo_id="PROMO123")
+print_response(a, "Отчет по заказам")
+
+# Пример вызова метода generate_competitors_position_report
+a = api.generate_competitors_position_report(12345, category_id=56789, date_from="2024-01-01", date_to="2024-01-31")
+print_response(a, "Отчет «Конкурентная позиция»")
+
+# Пример вызова метода generate_goods_turnover_report
+a = api.generate_goods_turnover_report(54321, report_date="2024-01-01")
+print_response(a, "Отчет по оборачиваемости товаров")
+
+# Пример вызова метода generate_stocks_on_warehouses_report
+a = api.generate_stocks_on_warehouses_report(54321, warehouse_ids=[1, 2, 3], report_date="2024-01-01", has_stocks=True)
+print_response(a, "Отчет по остаткам на складах")
+
+# Пример вызова метода generate_united_netting_report
+a = api.generate_united_netting_report(12345, date_from="2024-01-01", date_to="2024-01-31", placement_programs=["CPC"])
+print_response(a, "Отчет по платежам")
+
+# Пример вызова метода generate_shelfs_statistics_report
+a = api.generate_shelfs_statistics_report(12345, "2024-01-01", "2024-01-31", attribution_type="CLICKS")
+print_response(a, "Сводный отчет по полкам")
+
+# Пример вызова метода generate_goods_realization_report
+a = api.generate_goods_realization_report(54321, year=2024, month=1)
+print_response(a, "Отчет по реализации товаров")
+
+# Пример вызова метода generate_united_marketplace_services_report
+a = api.generate_united_marketplace_services_report(12345, date_from="2024-01-01", date_to="2024-01-31", inns=["1234567890"])
+print_response(a, "Отчет по стоимости услуг")
+
+# Пример вызова метода generate_prices_report
+a = api.generate_prices_report(business_id=12345, category_ids=[1, 2, 3], creation_date_from="2024-01-01", creation_date_to="2024-01-31")
+print_response(a, "Отчет «Цены на рынке»")
+
+# Пример вызова метода get_report_info
+a = api.get_report_info("REPORT123")
+print_response(a, "Статус и ссылка на отчет")

@@ -1,0 +1,48 @@
+# Инициализация объекта API
+api = FeedbackAPI()
+
+# Пример вызова метода get_business_goods_feedback
+a = api.get_business_goods_feedback("12345", req_data={"filter": "unanswered"})
+print_response(a, "Отзывы о товарах для бизнеса")
+
+# Пример вызова метода get_goods_feedback_comments
+a = api.get_goods_feedback_comments("12345", feedback_id=67890, page_token="abc123")
+print_response(a, "Комментарии к отзыву о товаре")
+
+# Пример вызова метода update_goods_feedback_comment (добавление нового комментария)
+a = api.update_goods_feedback_comment(
+    business_id=12345,
+    feedback_id=67890,
+    text="Спасибо за отзыв! Мы обязательно учтем ваши пожелания."
+)
+print_response(a, "Добавление комментария к отзыву")
+
+# Пример вызова метода update_goods_feedback_comment (обновление существующего комментария)
+a = api.update_goods_feedback_comment(
+    business_id=12345,
+    feedback_id=67890,
+    text="Мы обновили информацию по вашему запросу. Спасибо за обратную связь!",
+    comment_id=123
+)
+print_response(a, "Обновление комментария к отзыву")
+
+# Пример вызова метода delete_goods_feedback_comment
+a = api.delete_goods_feedback_comment(
+    business_id=12345,
+    comment_id=123
+)
+print_response(a, "Удаление комментария к отзыву")
+
+# Пример вызова метода skip_goods_feedbacks_reaction
+a = api.skip_goods_feedbacks_reaction(
+    business_id=12345,
+    feedback_ids=[67890, 54321]
+)
+print_response(a, "Пропуск отзывов, требующих реакции")
+
+# Пример вызова метода generate_goods_feedback_report
+a = api.generate_goods_feedback_report(
+    business_id=12345,
+    format="CSV"
+)
+print_response(a, "Генерация отчета по отзывам о товарах")

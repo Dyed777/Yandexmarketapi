@@ -1,0 +1,29 @@
+# Инициализация объекта API
+api = WarehousesAPI()
+
+# Пример вызова метода get_stocks
+a = api.get_stocks("12345", req_params={"limit": 10, "page_token": "abc123"}, req_data={"filter": "in_stock"})
+print_response(a, "Информация о запасах товаров для кампании")
+
+# Пример вызова метода update_stocks
+a = api.update_stocks(
+    business_id=12345,
+    warehouse_id=67890,
+    stocks=[
+        {"offerId": "SKU123", "stock": 10},
+        {"offerId": "SKU456", "stock": 15}
+    ]
+)
+print_response(a, "Обновление остатков на складе")
+
+# Пример вызова метода get_fulfillment_warehouses
+a = api.get_fulfillment_warehouses()
+print_response(a, "Список складов с их идентификаторами")
+
+# Пример вызова метода get_delivery_services
+a = api.get_delivery_services()
+print_response(a, "Список доступных служб доставки")
+
+# Пример вызова метода get_warehouses
+a = api.get_warehouses()
+print_response(a, "Список складов")
