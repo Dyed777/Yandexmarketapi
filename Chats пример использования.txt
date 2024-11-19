@@ -1,0 +1,36 @@
+# Инициализация объекта API
+api = ChatsAPI()
+
+# Пример вызова метода get_chats
+a = api.get_chats(12345, req_params={"status": "active"})
+print_response(a, "Список чатов для бизнеса")
+
+# Пример вызова метода create_chat
+a = api.create_chat(business_id=12345, order_id=67890)
+print_response(a, "Создание нового чата для заказа")
+
+# Пример вызова метода send_message_to_chat
+a = api.send_message_to_chat(
+    business_id=12345,
+    chat_id=67890,
+    message="Здравствуйте! Ваш заказ готов к отправке."
+)
+print_response(a, "Отправка сообщения в чат")
+
+# Пример вызова метода send_file_to_chat
+a = api.send_file_to_chat(
+    business_id=12345,
+    chat_id=67890,
+    file_path="/path/to/invoice.pdf"
+)
+print_response(a, "Отправка файла в чат")
+
+# Пример вызова метода get_chat_history
+a = api.get_chat_history(
+    business_id=12345,
+    chat_id=67890,
+    message_id_from=1001,
+    limit=10,
+    page_token="abc123"
+)
+print_response(a, "История сообщений в чате")
