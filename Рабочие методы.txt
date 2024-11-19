@@ -1,0 +1,195 @@
+
+# -------------------------------
+# Пример использования класса
+# -------------------------------
+if __name__ == "__main__":
+    client_id = "914570202"
+    api_key = "ACMA:EiUUExLd1nFnCRqsg56RzJuVJ2b0r1FsfHy3Owoi:5dc195fa"
+    api = YandexMarketAPI(client_id, api_key)
+
+    #campaigns = api.get_campaigns()
+    #print_response(campaigns, "Список кампаний")
+
+    #campaign_id = "21962613"
+    #campaign_info = api.get_campaign(campaign_id)
+    #print_response(campaign_info, "Информация о кампании")
+
+    #business_id = "954323"
+    #business_settings = api.get_business_settings(business_id)
+    #print_response(business_settings, "Информация о настройках кабинета")
+
+    #campaign_settings = api.get_campaign_settings(campaign_id)
+    #print_response(campaign_settings, "Информация о настройках магазина")
+
+    #hidden_offers = api.get_campaigns_hidden_offers(campaign_id)
+    #print_response(hidden_offers, "Список скрытых товаров")
+
+    #offer_mappings = api.get_business_offer_mappings(biz_id="954323")
+    #print_response(offer_mappings, "Список товаров в каталоге бизнеса")
+
+    #offers = api.get_campaign_offers(campaign_id, req_data={})
+    #print_response(offers, "Список товаров в магазине")
+
+    #promos = api.get_promos(business_id)
+    #print_response(promos, "Информация об акциях Маркета")
+
+    #orders = api.get_campaigns_orders(campaign_id, limit=5)
+    #print_response(orders, "Список заказов")
+
+    #order_id = "585090288"
+    #order_info = api.get_campaign_order(campaign_id, order_id)
+    #print_response(order_info, "Информация о заказе")
+
+    #returns_list = api.get_returns_list(campaign_id)
+    #print_response(returns_list, "Список возвратов и невыкупов")
+
+    #order_id = 579218013
+    #return_id = 53738350
+    #return_info = api.get_return_info(int(campaign_id), int(order_id), return_id)
+    #print_response(return_info, "Информация о возврате")
+
+    #feedback_info = api.get_business_goods_feedback(biz_id="954323")
+    #print_response(feedback_info, "Информация об отзывах о товарах")
+
+    #quality_rating_info = api.get_business_quality_rating(business_id, [campaign_id])
+    #print_response(quality_rating_info, "Информация об индексе качества магазинов")
+
+    #warehouses = api.get_warehouses()
+    #print_response(warehouses, "Список складов")
+
+    #delivery_services = api.get_delivery_services()
+    #print_response(delivery_services, "Справочник служб доставки")
+
+    #regions = api.get_regions(region_name="Москва")
+    #print_response(regions, "Регионы, соответствующие названию 'Москва'")
+
+    #search_results = api.search_models("Термопаста", region_id=213, page=1, page_size=5)
+    #print_response(search_results, "Результаты поиска моделей")
+
+    #region_id = "213"
+    #region_info = api.get_region(region_id)
+    #print_response(region_info, f"Информация о регионе с ID {region_id}")
+
+    #children_regions = api.get_region_children(region_id)
+    #print_response(children_regions, f"Дочерние регионы для региона с ID {region_id}")
+
+    #stocks_info = api.get_stocks(campaign_id, req_params={"limit": 10}, req_data={"withTurnover": True, "archived": False})
+    #print_response(stocks_info, "Информация об остатках и оборачиваемости товаров")
+
+    #offer_ids = ["8208310359"]
+    #prices_info = api.get_prices_by_offer_ids(campaign_id, offer_ids)
+    #print_response(prices_info, "Информация о ценах для указанных товаров")
+
+    #quarantine_offers_business = api.get_business_quarantine_offers(business_id, req_data={})
+    #print_response(quarantine_offers_business, "Список товаров в карантине по цене для бизнеса")
+
+    #quarantine_offers_campaign = api.get_campaign_quarantine_offers(campaign_id, req_data={})
+    #print_response(quarantine_offers_campaign, "Список товаров в карантине по цене для кампании")
+
+    #offer_cards_status = api.get_offer_cards_content_status(business_id, req_data={"offerIds": ["1019411458"]})
+    #print_response(offer_cards_status, "Информация о заполненности карточек товаров")
+
+    #offers = [
+    #    {
+     #       "offerId": "1026281557",
+      #      "name": "Термоклей двухкомпонентный STEEL STG-1v2",
+       #     "category": "Компьютерная техника/Комплектующие/Термопаста",
+        #    "vendor": "STEEL",
+         #   "barcodes": ["4610019100644"],
+          #  "description": "Теплопроводный клей предназначен для радиаторов.",
+           # "vendorCode": "STG-1v2-1",
+            #"basicPrice": {"value": "220.0", "currencyId": "RUR"}
+        #}
+    #]
+    #suggested_mappings = api.get_suggested_offer_mappings(business_id, offers)
+    #print_response(suggested_mappings, "Список соответствующих карточек на Маркете")
+
+    #model_id = 822120412
+    #region_id = 213
+    #model_info = api.get_model_info(model_id, region_id)
+    #print_response(model_info, "Информация о модели")
+
+    #model_ids = [952757555, 822120412]
+    #models_info = api.get_models_info(model_ids, region_id)
+    #print_response(models_info, "Информация о моделях")
+
+    #offers_info = api.get_model_offers(model_id, region_id, count=5, order_by_price="ASC")
+    #print_response(offers_info, "Список предложений для модели")
+
+    #search_query = "Термопаста"
+    #search_results = api.search_models(search_query, region_id, page=1, page_size=5)
+    #print_response(search_results, "Результаты поиска моделей")
+
+
+    #comments = api.get_goods_feedback_comments(biz_id="954323", feedback_id=354526722)
+    #print_response(comments, "Комментарии к отзыву о товаре")
+
+    #business_id = 954323
+    #promo_id = "cf_121198"
+    #promo_offers = api.get_promo_offers(business_id, promo_id, limit=5)
+    #print_response(promo_offers, "Список товаров в акции")
+
+    #skus = ["102089688224", "103611356459", "100813589980"]
+    #recommendations = api.get_bids_recommendations(business_id, skus)
+    #print_response(recommendations, "Рекомендованные ставки")
+
+    #bids_info = api.get_bids_info(business_id, skus=skus, limit=50)
+    #print_response(bids_info, "Информация об установленных ставках")
+
+    #recommendations = api.get_offer_recommendations(business_id=business_id, offer_ids=['862547698', '862536189'])
+    #print_response(recommendations, "Рекомендации по ценам")
+
+    #offers = [{"categoryId": 90535, "price": 300, "length": 14, "width": 3.5, "height": 3, "weight": 0.051, "quantity": 1}]
+    #tariffs = api.calculate_tariffs(offers, campaign_id=21962613, frequency='DAILY')
+    #print_response(tariffs, "Рассчитанные тарифы")
+
+    #categories_tree = api.get_categories_tree()
+    #print_response(categories_tree, "Дерево категорий")
+
+    #chats = api.get_chats(business_id,req_data={})
+    #print_response(chats, "Список чатов")
+
+    #category_ids = [7969496, 6374360]  # Замените на реальные идентификаторы категорий
+    #categories_quantum = api.get_categories_max_sale_quantum(category_ids)
+    #print_response(categories_quantum, "Информация о максимальных квотах продажи для категорий")
+
+
+    #category_params= api.get_category_content_parameters(category_id=7969496)
+    #print_response(category_params,"Список характеристик для категорий товара")
+
+    #report_respone=api.generate_goods_feedback_report(business_id=954323,format="CSV")
+    #print_response(report_respone,"Статус генераций отчёта об отзывах")
+
+    #chat_respone=api.create_chat(business_id=954323,order_id=585090288)
+    #print_response(chat_respone,"Созданный чат")
+
+    #send_message=api.send_message_to_chat(business_id=954323,chat_id=585090288,message="Проверка")
+    #print_response(send_message,"Отправка сообщения в чат")
+
+    #send_file=api.send_file_to_chat(business_id=954323,chat_id=585090288,file_path="Техническое задание.txt")
+    #print_response(send_file,"результат отправки файла")
+
+    #chat_history=api.get_chat_history(business_id=954323,chat_id=585090288)
+    #print_response(chat_history,"историю чата")
+
+    #comment_create=api.update_goods_feedback_comment(business_id=954323,feedback_id=353073291,text="Проверка")
+    #print_response(comment_create,"результат создания комментария к отзыву")
+
+    #skip_comment=api.skip_goods_feedbacks_reaction(business_id=954323,feedback_ids=[353367917,353195071])
+    #print_response(skip_comment,"Пропуск отзывов")
+
+    #delete_comment=api.delete_goods_feedback_comment(business_id=954323,comment_id=353367917)
+    #print_response(delete_comment,"Результат удаления комментариев")
+
+    #business_id = 954323
+    #bids = [
+        #{"sku": "101820963888", "bid": 500},  # Ставка 5% (5 * 100)
+        #{"sku": "101835111283", "bid": 700}  # Ставка 7% (7 * 100)
+    #]
+    #sales_bust=api.put_bids_for_business(business_id,bids)
+    #print_response(sales_bust,"Включение буста продаж и установка ставок")
+
+    #update_stocks=api.update_stocks(business_id=954323,warehouse_id=)
+    #print_response(update_stocks,"Обновление остатков товара.")
+
+    #get_order_stats=api.get_orders_stats(21962613,)
